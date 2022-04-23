@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trabajo practico n°3 creacion pagina web con js</title>
+</head>
+<body>
+<div id="divMain">
+        <h1 id="1h1">Buenas dias, tardes, noches.</h1>
+        <h2 id="1h2"></h2>
+        <input id="entrada" onkeyup="escribirTitulo()" placeholder="Escriba lo que quiera" >
+        
+        <div id="cont3"></div>
+        <input id="entrada2" onkeyup="escribirContenido()"placeholder="y despues de enter">
+
+        <p id="cont4"></p>
+        <button type="button" onclick="agregarTxt()">Agregar texto</button>
+
+        <input type="button" value="refrescar" onclick="refrescar()">
+</div>
+     <script>
+            var colorDiv = document.getElementById('divMain');
+            colorDiv.style.backgroundColor ='#b9bc00';
+            document.getElementById('divMain').style.padding = '70px 40%';
+            document.querySelector('input').style.margin = '20px 0';
+
+            function escribirTitulo(){
+                valor = document.getElementById('entrada').value; 
+                document.getElementById('1h2').innerHTML=' '+valor;
+            }
+
+            function escribirContenido(){
+                valor = document.getElementById('entrada2').value;
+                document.getElementById('cont3').innerHTML=' '+valor;
+            }
+
+            function agregarTxt(){
+            var texto = document.createTextNode('Nuevo contenido de texto para el profe. ');
+            document.getElementById('cont4').appendChild(texto);
+            }
+
+            function refrescar(){
+                location.reload();
+                document.getElementById("entrada").value = '';
+                document.getElementById("entrada2").value = '';
+            }
+
+    </script>
+</body>
+</html>
